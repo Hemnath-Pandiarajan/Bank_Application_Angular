@@ -1,0 +1,35 @@
+<div class="container my-5">
+    <div class="d-flex pull-right">
+        <button type="button" routerLink="/create-account" mdbBtn color="primary" mdbWavesEffect>Create
+            Account</button>
+    </div>
+    <table mdbTable bordered="true">
+        <thead>
+            <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let account of accounts;let i=index;">
+                <th scope="row">{{i+1}}</th>
+                <td>{{account.account.account_number}}</td>
+                <td>{{account.cif_number}}</td>
+                <td>{{account.first_name}}</td>
+                <td>{{account.last_name}}</td>
+                <td>{{account.email_id}}</td>
+                <td>{{account.mobile_number}}</td>
+                <td>{{account.mpin}}</td>
+                <td><button (click)="goToAccountDetail(account.cif_number)" mdbBtn color="success" class=" waves-light"
+                        mdbWavesEffect>
+                        <mdb-icon far icon="eye"></mdb-icon>
+                    </button>
+                </td>
+                <td><button (click)="deleteAccount(account.cif_number)" mdbBtn color="danger" class=" waves-light"
+                        mdbWavesEffect>
+                        <mdb-icon far icon="trash-alt"></mdb-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+

@@ -1,0 +1,48 @@
+<div class="container my-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title text-primary">Create Account</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="accForm" (ngSubmit)="addAccount()">
+                        <div class="form-group mb-2">
+                            <label for="first_name">First name</label>
+                            <input type="text" name="first_name" formControlName="first_name" id="first_name"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="last_name">Last name</label>
+                            <input type="text" name="last_name" formControlName="last_name" id="last_name"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="email_id">Email</label>
+                            <input type="email" name="email_id" formControlName="email_id" id="email_id"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="mobile_number">Mobile no</label>
+                            <input type="number" name="mobile_number" formControlName="mobile_number" id="mobile_number"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="mpin">mpin</label>
+                            <input type="number" name="mpin" formControlName="mpin" id="mpin" class="form-control">
+                        </div>
+
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button mdbBtn color="primary" type="submit" [disabled]="!accForm.valid" class="waves-light"
+                                mdbWavesEffect>
+                                <div [hidden]="showProgress" class="spinner-border spinner-border-sm mr-2" role="status">
+                                    <span class="sr-only">Creating...</span>
+                                </div>Create
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
